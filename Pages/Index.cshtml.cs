@@ -41,10 +41,10 @@ namespace SerwisyInternetowe.Pages
 
             var factory = new ConnectionFactory()
             {
-                UserName = "ujjlojar",
-                HostName = "rat.rmq2.cloudamqp.com",
-                Password = "RH-XJ7m0bLuTvxWVq8pTg_HNg6ZPanoK",
-                VirtualHost = "oeqjbkyk"
+                UserName = Program.username,
+                HostName = Program.host,
+                Password = Program.password,
+                VirtualHost = Program.vhost
             };
             factory.Uri = new Uri("amqps://oeqjbkyk:RH-XJ7m0bLuTvxWVq8pTg_HNg6ZPanoK@rat.rmq2.cloudamqp.com/oeqjbkyk");
 
@@ -54,7 +54,7 @@ namespace SerwisyInternetowe.Pages
                 for (int i = 0; i < 5; i++)
                 {
                     //ReadOnlyMemory<byte> body = Encoding.UTF8.GetBytes(message);
-                    channel.BasicConsume("deviceinputqueue", true, "", false, false, null, new Consumer(channel));
+                    channel.BasicConsume(Program.endpoint, true, "", false, false, null, new Consumer(channel));
                 }
                 //channel.QueueDeclare("deviceinputqueue", true, false, false, null);
                 //var consumer = new EventingBasicConsumer(channel);

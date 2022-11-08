@@ -39,3 +39,4 @@ C:\Users\suruw\source\repos\SerwisyInternetowe\SerwisyInternetowe\obj\Debug\net5
 C:\Users\suruw\source\repos\SerwisyInternetowe\SerwisyInternetowe\obj\Debug\net5.0\ref\SerwisyInternetowe.dll
 C:\Users\suruw\source\repos\SerwisyInternetowe\SerwisyInternetowe\obj\Debug\net5.0\SerwisyInternetowe.pdb
 C:\Users\suruw\source\repos\SerwisyInternetowe\SerwisyInternetowe\obj\Debug\net5.0\SerwisyInternetowe.genruntimeconfig.cache
+C:\Users\suruw\source\repos\SerwisyInternetowe\SerwisyInternetowe\bin\Debug\net5.0\config.txt
