@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "YHtzXz3OvRbT6/uqXaYr55747PbRsXZ0P3OvWPdpESu6UhFSsT2r/VONfMJ7YposHLVrraowJXmbfL51/EHV5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\suruw\\source\\repos\\SerwisyInternetowe\\SerwisyInternetowe\\SerwisyInternetowe.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\suruw\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
+    "C:\\Users\\suruw\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\suruw\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\suruw\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
