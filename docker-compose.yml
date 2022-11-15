@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  nginx:
+    image: "kamil118/nxinxtcp"
+    ports:
+      - "60383:80"
+      - "60384:443"
+      - "60385:5672"
+  rabbitmq:
+    image: "rabbitmq:3.11.2-alpine"
+  server:
+    image: "kamil118/dotnetserver"
+    depends_on:
+      - "rabbitmq"
+   

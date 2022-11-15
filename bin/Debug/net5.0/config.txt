@@ -1,5 +1,0 @@
-oeqjbkyk
-RH-XJ7m0bLuTvxWVq8pTg_HNg6ZPanoK
-rat.rmq2.cloudamqp.com
-oeqjbkyk
-deviceinputqueue

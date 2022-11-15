@@ -1,0 +1,5 @@
+﻿guest
+guest
+localhost
+60385
+deviceinputqueue
