@@ -24,11 +24,21 @@ namespace SerwisyInternetowe.Pages
             Thread.Sleep(2000);
         }
     }
+
+    public class Temp
+    {
+        public int temp { get; set; }
+        public int cisnienie { get; set; }
+        public long timestamp { get; set; }
+        public Guid guid { get; set; }
+
+    }
+
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public string message { get; set; }
+        public List<Temp> tempArray = new List<Temp>();
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -37,8 +47,21 @@ namespace SerwisyInternetowe.Pages
 
         public void OnGet()
         {
-            message = "Czekam na wiadomosc...";
+            Temp temp = new Temp();
+            temp.cisnienie = 1;
+            temp.temp = 1;
+            temp.timestamp = 1;
+            temp.guid = Guid.NewGuid();
 
+            tempArray.Add(temp);
+
+            Temp temp2 = new Temp();
+            temp2.cisnienie = 2;
+            temp2.temp = 2;
+            temp2.timestamp = 2;
+            temp2.guid = Guid.NewGuid();
+            tempArray.Add(temp2);
+            /*
             var factory = new ConnectionFactory()
             {
                 UserName = Program.username,
@@ -47,7 +70,7 @@ namespace SerwisyInternetowe.Pages
                 VirtualHost = Program.vhost
             };
             //factory.Uri = new Uri("amqps://oeqjbkyk:RH-XJ7m0bLuTvxWVq8pTg_HNg6ZPanoK@rat.rmq2.cloudamqp.com/oeqjbkyk");
-
+            
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
@@ -64,8 +87,9 @@ namespace SerwisyInternetowe.Pages
                 {
                     var body = ea.Body.ToArray();
                     message = Encoding.UTF8.GetString(body);
-                };*/
+                };
             }
+        */
         }
     }
 }

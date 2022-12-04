@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.IO;
+using MongoDB.Driver;
+
 
 namespace SerwisyInternetowe
 {
