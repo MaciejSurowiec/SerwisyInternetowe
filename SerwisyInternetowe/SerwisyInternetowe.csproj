@@ -18,8 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ChartJS" Version="22.1.6" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
     <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Models\" />
   </ItemGroup>
 
 </Project>

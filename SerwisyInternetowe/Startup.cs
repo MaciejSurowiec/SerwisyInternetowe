@@ -50,6 +50,7 @@ namespace SerwisyInternetowe
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllerRoute("default", "{action=Index}/{id?}");
             });
         }
     }
