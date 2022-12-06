@@ -54,7 +54,7 @@
 
 
         let guids = [...new Set(otherArray)];
-        var datasett = [];
+        var datasets = [];
         var colorNames = Object.keys(window.chartColors);
         let items = document.getElementsByClassName("item");
         for (var index = 0; index < guids.length; ++index) {
@@ -73,16 +73,14 @@
                     newDataset.data.push(Number(items[i].getElementsByClassName("Temp")[0].textContent.trim()));
                 }
             }
-            datasett.push(newDataset);
+            datasets.push(newDataset);
         }
 
-        console.log(datasett);
+        console.log(datasets);
 
         var config = {
             type: 'line',
-            data: {
-                dataset: { datasett }
-            },
+            data: { datasets },
             options: {
                 responsive: true,
                 title: {
@@ -115,7 +113,7 @@
                 }
             }
         };
-
+        console.log(config.data);
         window.onload = function () {
             var ctx = document.getElementById("canvas").getContext("2d");
             window.myLine = new Chart(ctx, config);
