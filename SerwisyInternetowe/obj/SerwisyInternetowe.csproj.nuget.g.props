@@ -5,19 +5,24 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Kamil\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\suruw\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages;C:\Program Files (x86)\Microsoft\Xamarin\NuGet\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.3.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.11.2</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="C:\Users\Kamil\.nuget\packages\" />
+    <SourceRoot Include="C:\Users\suruw\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft\Xamarin\NuGet\" />
   </ItemGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.visualstudio.azure.containers.tools.targets\1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.visualstudio.azure.containers.tools.targets\1.11.1\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">C:\Users\Kamil\.nuget\packages\microsoft.visualstudio.azure.containers.tools.targets\1.11.1</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
-    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\Kamil\.nuget\packages\jquery\3.5.1</PkgjQuery>
-    <PkgChartJS Condition=" '$(PkgChartJS)' == '' ">C:\Users\Kamil\.nuget\packages\chartjs\22.1.6</PkgChartJS>
+    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">C:\Users\suruw\.nuget\packages\microsoft.visualstudio.azure.containers.tools.targets\1.11.1</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\suruw\.nuget\packages\jquery\3.5.1</PkgjQuery>
+    <PkgChartJS Condition=" '$(PkgChartJS)' == '' ">C:\Users\suruw\.nuget\packages\chartjs\22.1.6</PkgChartJS>
   </PropertyGroup>
 </Project>

@@ -16,7 +16,9 @@ namespace SerwisyInternetowe.Controllers
         [HttpGet("{a:Guid}")]
         public IEnumerable<string> Get([FromRoute] Guid a)
         {
-            return new string[] { "value1", "value2", a.ToString() };
+            var data = Program.databaseCommunicator.GetPackets();
+
+            return new string[] { data.ToList().ToString() };
         }
 
         

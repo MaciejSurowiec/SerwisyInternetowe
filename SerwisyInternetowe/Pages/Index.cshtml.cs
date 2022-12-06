@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using SerwisyInternetowe;
 
 namespace SerwisyInternetowe.Pages
 {
@@ -25,20 +26,15 @@ namespace SerwisyInternetowe.Pages
         }
     }
 
-    public class Temp
-    {
-        public int temp { get; set; }
-        public int cisnienie { get; set; }
-        public long timestamp { get; set; }
-        public Guid guid { get; set; }
-
-    }
+  
 
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public List<Temp> tempArray = new List<Temp>();
+        public List<TempICis> tempArray = new List<TempICis>();
+
+      
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -47,20 +43,32 @@ namespace SerwisyInternetowe.Pages
 
         public void OnGet()
         {
-            Temp temp = new Temp();
-            temp.cisnienie = 1;
-            temp.temp = 1;
-            temp.timestamp = 1;
-            temp.guid = Guid.NewGuid();
+            /*
+            TempICis t = new TempICis();
+            t.cisnienie = 1;
+            t.Temp = 2;
+            t.timestamp = 3;
+            t.guid = new Guid();
+            TempICis t1 = new TempICis();
+            t1.cisnienie = 5;
+            t1.Temp = 4;
+            t1.timestamp = 6;
+            t1.guid = t.guid;
+            TempICis t2 = new TempICis();
+            t2.cisnienie = 5;
+            t2.Temp = 4;
+            t2.timestamp = 6;
+            t2.guid = t.guid;
+            tempArray.Add(t);
+            tempArray.Add(t1);
+            tempArray.Add(t2);
 
-            tempArray.Add(temp);
 
-            Temp temp2 = new Temp();
-            temp2.cisnienie = 2;
-            temp2.temp = 2;
-            temp2.timestamp = 2;
-            temp2.guid = Guid.NewGuid();
-            tempArray.Add(temp2);
+            */
+
+            var data = Program.databaseCommunicator.GetPackets();
+
+            tempArray = data.ToList();
         }
     }
 }
