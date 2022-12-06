@@ -61,35 +61,6 @@ namespace SerwisyInternetowe.Pages
             temp2.timestamp = 2;
             temp2.guid = Guid.NewGuid();
             tempArray.Add(temp2);
-            /*
-            var factory = new ConnectionFactory()
-            {
-                UserName = Program.username,
-                HostName = Program.host,
-                Password = Program.password,
-                VirtualHost = Program.vhost
-            };
-            //factory.Uri = new Uri("amqps://oeqjbkyk:RH-XJ7m0bLuTvxWVq8pTg_HNg6ZPanoK@rat.rmq2.cloudamqp.com/oeqjbkyk");
-            
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    //ReadOnlyMemory<byte> body = Encoding.UTF8.GetBytes(message);
-                    channel.BasicConsume(Program.endpoint, true, "", false, false, null, new Consumer(channel));
-                }
-                //channel.QueueDeclare("deviceinputqueue", true, false, false, null);
-                //var consumer = new EventingBasicConsumer(channel);
-                //channel.BasicConsume("deviceinputqueue", true, "", false, false, null, new Consumer(channel));
-                /*
-                consumer.Received += (model, ea) =>
-                {
-                    var body = ea.Body.ToArray();
-                    message = Encoding.UTF8.GetString(body);
-                };
-            }
-        */
         }
     }
 }

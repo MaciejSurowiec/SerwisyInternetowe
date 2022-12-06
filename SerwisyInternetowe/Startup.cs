@@ -24,6 +24,12 @@ namespace SerwisyInternetowe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<QueueProcessor>(new QueueProcessor(
+                Program.username,
+                Program.password,
+                Program.host,
+                Program.endpoint,
+                Program.databaseCommunicator));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

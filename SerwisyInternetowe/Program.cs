@@ -11,7 +11,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.IO;
 using MongoDB.Driver;
-
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SerwisyInternetowe
 {
@@ -21,9 +21,11 @@ namespace SerwisyInternetowe
         public static string username {get; set;}
         public static string password {get; set;}
         public static string host {get; set;}
-        public static string vhost {get; set;}
         public static string endpoint {get; set;}
 
+        public static DatabaseCommunicator databaseCommunicator { get; set; }
+
+        public static IHost host_;
 
         public static void Main(string[] args)
         {
@@ -31,12 +33,24 @@ namespace SerwisyInternetowe
             username = sr.ReadLine();
             password = sr.ReadLine();
             host = sr.ReadLine();
-            vhost = ConnectionFactory.DefaultVHost;
             endpoint = sr.ReadLine();
 
+            string databaseConnectionString = sr.ReadLine();
+            string databaseName = sr.ReadLine();
+            string collectionName = sr.ReadLine();
 
-            CreateHostBuilder(args).Build().Run();
+            databaseCommunicator = new DatabaseCommunicator(databaseConnectionString, databaseName, collectionName);
 
+
+            host_ = CreateHostBuilder(args).Build();
+            host_.RunAsync();
+
+            host_.Services.GetRequiredService<QueueProcessor>().StartAsync(System.Threading.CancellationToken.None);
+
+            while (true)
+            {
+
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
