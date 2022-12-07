@@ -18,7 +18,7 @@ namespace SerwisyInternetowe.Controllers
         {
             var data = Program.databaseCommunicator.GetPackets();
 
-            return new string[] { data.ToList().ToString() };
+            return new string[] { data.ToString() };
         }
 
         
