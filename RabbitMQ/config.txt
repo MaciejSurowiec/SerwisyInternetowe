@@ -3,3 +3,6 @@ guest
 localhost
 60385
 deviceinputqueue
+mongodb://root:student@actina15.maas:27017
+SI_180383
+tempicis

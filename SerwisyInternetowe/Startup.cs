@@ -24,6 +24,7 @@ namespace SerwisyInternetowe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            Console.WriteLine("ConfiguringServices");
             services.AddSingleton<QueueProcessor>(new QueueProcessor(
                 Program.username,
                 Program.password,

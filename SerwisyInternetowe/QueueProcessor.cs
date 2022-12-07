@@ -45,6 +45,7 @@ namespace SerwisyInternetowe
 
         public QueueProcessor(string username, string password, string host, string endpoint, DatabaseCommunicator dbc)
         {
+            Console.WriteLine("Creating QueueProcessor");
             this.endpoint = endpoint;
             this.databaseCommunicator = dbc;
 
@@ -61,6 +62,7 @@ namespace SerwisyInternetowe
         {
             try
             {
+                Console.WriteLine("Starting QueueProcessor");
                 connection = factory.CreateConnection();
 
                 channel = connection.CreateModel();
@@ -78,6 +80,7 @@ namespace SerwisyInternetowe
 
         private void DoWork()
         {
+            Console.WriteLine("CreatingConsumer");
             channel.BasicConsume(Program.endpoint, true, "", false, false, null, new Consumer(channel,databaseCommunicator));
             channel.QueueDeclare("deviceinputqueue", true, false, false, null);
             while(true)

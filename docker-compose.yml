@@ -9,7 +9,7 @@ services:
   rabbitmq:
     image: "rabbitmq:3.11.2-alpine"
   server:
-    image: "kamil118/dotnetserver"
+    image: "kamil118/dotnetserver:ver2"
     depends_on:
       - "rabbitmq"
    
