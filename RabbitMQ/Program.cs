@@ -34,7 +34,7 @@ namespace RabbitMQ
                 Port = int.Parse(port)
             };
 
-            Guid deviceguid = new Guid();
+            Guid deviceguid = Guid.NewGuid();
 
             using (var connection = factory.CreateConnection())
             {
