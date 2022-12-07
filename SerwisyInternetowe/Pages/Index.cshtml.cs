@@ -55,16 +55,16 @@ namespace SerwisyInternetowe.Pages
             t1.timestamp = 6;
             t1.guid = t.guid;
             TempICis t2 = new TempICis();
-            t2.cisnienie = 5;
-            t2.Temp = 4;
-            t2.timestamp = 6;
+            t2.cisnienie = 1;
+            t2.Temp = 7;
+            t2.timestamp = 7;
             t2.guid = t.guid;
             tempArray.Add(t);
             tempArray.Add(t1);
             tempArray.Add(t2);
-
-
             */
+
+
 
             var data = Program.databaseCommunicator.GetPackets();
 

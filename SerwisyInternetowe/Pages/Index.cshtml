@@ -41,6 +41,7 @@
     <div style="width:75%;">
         <canvas id="canvas"></canvas>
     </div>
+
     <br>
     <br>
     <script>
@@ -58,10 +59,10 @@
         var colorNames = Object.keys(window.chartColors);
         let items = document.getElementsByClassName("item");
         for (var index = 0; index < guids.length; ++index) {
-            var colorName = colorNames[(index+1) % colorNames.length];
+            var colorName = colorNames[(index + 1) % colorNames.length];
             var newColor = window.chartColors[colorName];
             var newDataset = {
-                label: guids[index],
+                label: guids[index]+"temp",
                 backgroundColor: newColor,
                 borderColor: newColor,
                 data: [],
@@ -70,7 +71,32 @@
 
             for (var i = 0; i < items.length; i++) {
                 if (items[i].getElementsByClassName("guid")[0].textContent.trim() == guids[index]) {
-                    newDataset.data.push(Number(items[i].getElementsByClassName("Temp")[0].textContent.trim()));
+                    newDataset.data.push({
+                        x: Number(items[i].getElementsByClassName("timestamp")[0].textContent.trim()),
+                        y: Number(items[i].getElementsByClassName("Temp")[0].textContent.trim())
+                });
+                }
+            }
+            datasets.push(newDataset);
+        }
+
+        for (var index = 0; index < guids.length; ++index) {
+            var colorName = colorNames[(index + 1 + guids.length) % colorNames.length];
+            var newColor = window.chartColors[colorName];
+            var newDataset = {
+                label: guids[index] + "pressure",
+                backgroundColor: newColor,
+                borderColor: newColor,
+                data: [],
+                fill: false
+            };
+
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].getElementsByClassName("guid")[0].textContent.trim() == guids[index]) {
+                    newDataset.data.push({
+                        x: Number(items[i].getElementsByClassName("timestamp")[0].textContent.trim()),
+                        y: Number(items[i].getElementsByClassName("cisnienie")[0].textContent.trim())
+                    });
                 }
             }
             datasets.push(newDataset);
@@ -79,7 +105,7 @@
         console.log(datasets);
 
         var config = {
-            type: 'line',
+            type: 'scatter',
             data: { datasets },
             options: {
                 responsive: true,
@@ -107,7 +133,7 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'temperature'
+                            labelString: 'values'
                         }
                     }]
                 }
@@ -118,8 +144,10 @@
             var ctx = document.getElementById("canvas").getContext("2d");
             window.myLine = new Chart(ctx, config);
         };
-       
+
     </script>
+
+
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
